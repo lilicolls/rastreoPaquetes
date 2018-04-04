@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8"><!-- Conjunto de Caracteres Predeterminados. -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="#"><!-- Descripcion corta para el SEO. -->
+        <meta name="author" content="Sionchez Carlos"><!-- Informacion Acerca del Autor. -->
+
+        <!-- Icono - Inicio.-->
+        <link rel="shortcut icon" href="imagenes/favicon.ico">
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="apple-touch-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="apple-touch-icon-114x114.png">
+        <!-- Icono - Fin. -->
+
+        <title>Tesis - Sionchez Carlos</title>
+
+        <!-- Tipografia Goolge Fonts - Inicio. -->
+        <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,700' rel='stylesheet' type='text/css'>
+        <!-- Tipografia Goolge Fonts - Fin. -->
+
+        <link href="css/bootstrap.min.css" rel="stylesheet"><!-- Bootstrap -->
+
+        <link href="css/pe-icon-7-stroke.css" rel="stylesheet"><!-- Fuentes de los Iconos. -->
+
+        <link href="css/estilo.css" rel="stylesheet"><!-- Estilos del Tema Base. -->
+
+        <link href="css/color/verde.css" rel="stylesheet"><!-- Estilos de Color. -->
+
+        <!-- Librerias de FireBase - Inicio. -->
+        <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-app.js"></script><!-- Importar Configuraciones de FireBase. -->
+        <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-auth.js"></script><!-- Autenticacion. -->
+        <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-database.js"></script><!-- Base de Datos. -->
+        <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-messaging.js"></script><!-- Mensajes. -->
+
+        <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
+        <!-- Librerias de FireBase - Fin. -->
+    </head>
+    <body data-spy="scroll" data-target="#navbar-menu">
+
+      <!-- Titulo - Inicio. -->
+      <section class="bg-custom header-title-box">
+        <div class="container"><!-- Inicio del container. -->
+          <div class="row">
+            <div class="col-sm-12 text-center">
+              <h3 class="text-white">TÍtulo</h3>
+            </div>
+          </div>
+        </div><!-- Fin del container. -->
+      </section>
+      <!-- Titulo - Fin. -->
+
+      <!-- Formulario de Inicio de Sesion - Inicio. -->
+      <section class="section" id="seccionUno">
+        <div class="container"><!-- Inicio del container. -->
+          <div class="row"><!-- Inicio del row. -->
+            <div class="col-sm-12 text-center"><!-- Inicio de Columna. -->
+              <h3 class="title">TÍtulo</h3>
+              <p class="text-muted sub-title">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.<br/> Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes.</p>
+            </div><!-- Fin de Columna. -->
+          </div><!-- Fin del row. -->
+
+          <div class="row"><!-- Inicio del row. -->
+            <div class="col-sm-12 text-center"><!-- Inicio de Columna. -->
+              <div  class="contact-form">
+                <div class="form-group"><!-- Email. -->
+                  <input type="email" class="form-control" id="txtEmail"  placeholder="Email" autocomplete="off">
+                </div>
+                <div class="form-group"><!-- Cedula. -->
+                  <input type="text" class="form-control" id="txtCedula"  placeholder="v- Cedula" autocomplete="off">
+                </div>
+                <div class="form-group"><!-- Contraseña. -->
+                  <input type="password" class="form-control" id="txtPassword" placeholder="Contraseña" autocomplete="off">
+                </div>
+
+                <div class="row"><!-- Inicio del row. -->
+                  <div class="col-xs-12"><!-- Inicio de Columna. -->
+                    <div class="text-center">
+                      <button type="button" class="btn btn-custom" id="btnInicioSesion">INICIAR SESEÓN</button>
+                    </div>
+                  </div><!-- Fin de Columna. -->
+                </div><!-- Fin del row. -->
+                </div>
+              </div><!-- Fin de Columna. -->
+            </div><!-- Fin del row. -->
+          </div><!-- Fin del container. -->
+        </section>
+        <!-- Formulario de Inicio de Sesion - Fin. -->
+
+        <!-- Seccion Uno - Inicio. -->
+        <section class="section bg-light" id="seccionDos">
+            <div class="container"><!-- Inicio del container. -->
+                <div class="row"><!-- Inicio de row. -->
+                    <div class="col-sm-12 text-center">
+                        <h3 class="title">TÍtulo</h3>
+                        <p class="text-muted sub-title">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.<br/> Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes.</p>
+                        <button type="button" class="btn-sc btn-custom" id="btnCerrarSesion">CERRAR SESEÓN</button>
+                    </div>
+                </div><!-- Fin del row. -->
+            </div><!-- Fin del container. -->
+        </section>
+        <!-- Seccion Uno - Fin -->
+
+        <!-- Seccion Dos - Inicio. -->
+        <section class="section bg-light" id="seccionTres">
+            <div class="container"><!-- Inicio del container. -->
+                <div class="row"><!-- Inicio de row. -->
+                    <div class="col-sm-12 text-center">
+                        <h3 class="title">TÍtulo</h3>
+                        <p class="text-muted sub-title">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.<br/> Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes.</p>
+                    </div>
+                </div><!-- Fin del row. -->
+            </div><!-- Fin del container. -->
+        </section>
+        <!-- Seccion Dos - Fin -->
+
+        <!-- Pie de Pagina - Inicio. -->
+        <footer class="section bg-gray footer">
+          <div class="container"><!-- Inicio del container. -->
+            <div class="row"><!-- Inicio de Columna. -->
+              <div class="col-sm-12">
+                <div class="footer-alt text-center">
+                  <p class="text-muted m-b-0">2018 © Sionchez Carlos</p>
+                </div>
+              </div>
+            </div><!-- Fin de Columna. -->
+          </div><!-- Fin del container. -->
+        </footer>
+        <!-- Pie de Pagina - Fin. -->
+
+        <!-- JS Personalizados - Inicio. -->
+        <script src="js\js_personalizados\inicio_sesion.js"></script>
+        <!-- JS Personalizados - Fin. -->
+        <!-- js placed at the end of the document so the pages load faster -->
+        <script src="js/jquery-2.1.4.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <!-- Jquery easing -->
+        <script type="text/javascript" src="js/jquery.easing.1.3.min.js"></script>
+        <!--sticky header-->
+        <script type="text/javascript" src="js/jquery.sticky.js"></script>
+        <!-- parsley - form validation -->
+        <script type="text/javascript" src="js/parsley.min.js"></script>
+        <!--common script for all pages-->
+        <script src="js/jquery.app.js"></script>
+    </body>
+</html>
