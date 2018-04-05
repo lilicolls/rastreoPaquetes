@@ -1,11 +1,12 @@
 const txtEmail = document.getElementById('txtEmail');
 const txtPassword = document.getElementById('txtPassword');
+const txtCedula = document.getElementById('txtCedula')
 const btnInicioSesion = document.getElementById('btnInicioSesion');
 const btnCerrarSesion = document.getElementById('btnCerrarSesion');
 const seccionUno = document.getElementById('seccionUno');
 const seccionDos = document.getElementById('seccionDos');
 const seccionTres = document.getElementById('seccionTres');
-
+var cedula = ''
 
 firebase.auth().onAuthStateChanged( firebaseUser => {
     if (firebaseUser) {
@@ -24,6 +25,7 @@ firebase.auth().onAuthStateChanged( firebaseUser => {
 btnInicioSesion.addEventListener('click', ()=>{
     const email = txtEmail.value;
     const pass = txtPassword.value;
+    cedula = txtCedula.value;
     firebase.auth().signInWithEmailAndPassword(email, pass)     
     .then(()=>{
         console.log("working")
