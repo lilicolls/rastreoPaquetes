@@ -28,6 +28,8 @@
 
         <link href="css/color/verde.css" rel="stylesheet"><!-- Estilos de Color. -->
 
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/tabulator/3.4.6/css/tabulator.min.css" rel="stylesheet"> <!-- Estilos de tabla. -->
+
         <!-- Librerias de FireBase - Inicio. -->
         <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
         <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase-app.js"></script>
@@ -127,6 +129,22 @@
         </section>
         <!-- Seccion Dos - Fin -->
 
+        <!-- Seccion Cuatro - Inicio. -->
+        <section class="section bg-light" id="seccionCuatro">
+          <div class="container"><!-- Inicio del container. -->
+              <div class="row"><!-- Inicio de row. -->
+                  <div class="col-sm-12 text-center">
+                      <h3 class="title">Tablas con los paquetes</h3>
+                      <div id ="tabla">
+
+                      </div>
+                      <p class="text-muted sub-title">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.<br/> Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes.</p>
+                  </div>
+              </div><!-- Fin del row. -->
+          </div><!-- Fin del container. -->
+      </section>
+      <!-- Seccion Cuatro - Fin -->
+
         <!-- Pie de Pagina - Inicio. -->
         <footer class="section bg-gray footer">
           <div class="container"><!-- Inicio del container. -->
@@ -141,11 +159,7 @@
         </footer>
         <!-- Pie de Pagina - Fin. -->
 
-        <!-- JS Personalizados - Inicio. -->
-        <script src="js\js_personalizados\inicio_sesion.js"></script>
-        <script src="js\js_personalizados\user.js"></script>
-        <script src="js\js_personalizados\package.js"></script>
-        <!-- JS Personalizados - Fin. -->
+       
         <!-- js placed at the end of the document so the pages load faster -->
         <script src="js/jquery-2.1.4.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
@@ -159,5 +173,16 @@
         <script src="js/jquery.app.js"></script>
         <!-- Libreria para manejar los mensajes al usuario -->
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <!-- Libreria Tabulator, como manejador de las tablas  -->
+        <script   src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"   integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="   crossorigin="anonymous"></script>
+        
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tabulator/3.4.6/js/tabulator.min.js"></script>
+
+         <!-- JS Personalizados - Inicio. -->
+         <script src="js\js_personalizados\inicio_sesion.js"></script>
+         <script src="js\js_personalizados\user.js"></script>
+         <script src="js\js_personalizados\package.js"></script>
+         <script src ="js/js_personalizados/utilities.js"></script>
+         <!-- JS Personalizados - Fin. -->
     </body>
 </html>
