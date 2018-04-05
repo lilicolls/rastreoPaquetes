@@ -1,5 +1,6 @@
 const txtEmail = document.getElementById('txtEmail');
 const txtPassword = document.getElementById('txtPassword');
+
 const txtCedula = document.getElementById('txtCedula')
 const btnInicioSesion = document.getElementById('btnInicioSesion');
 const btnCerrarSesion = document.getElementById('btnCerrarSesion');

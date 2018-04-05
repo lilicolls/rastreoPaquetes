@@ -31,8 +31,17 @@ function findPackage(idPackage = "62 27 F2 8B") {
 }
 
 function findPackages () {
-    database.ref('/paquetes/').on('child_added', (data)=>{
-        console.log(data.val())
+
+    database.ref('/paquetes/').on( 'value', (snapshot,err)=>{
+       if(!snapshot.val()){
+        console.log("no tiene paquetes")
+        
+       }else {
+        console.log("tiene paquetes")
+        console.log(snapshot.val())
+       }
+        
     })
     
+   
 }
