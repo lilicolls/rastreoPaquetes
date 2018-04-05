@@ -30,9 +30,19 @@ function findPackage(idPackage = "62 27 F2 8B") {
 
 }
 
-function findPackages () {
-
-    database.ref('/paquetes/').on( 'value', (snapshot,err)=>{
+function findPackages (ciudad) {
+    //metodo para filtrar la busqueda de paquetess
+    // si el usuario proporciona una ciudad, el metodo retorna los paquetes de dicha ciudad
+    //si el usuario no proporciuna ciudad entonces el metodo retorna todos los paquetes almacenados en la base de datos
+    let ref = ""
+    if (ciudad) {
+        console.log(`busco por ciudad en ${ciudad}`)
+        ref = database.ref('/paquetes/').orderByChild("destino").equalTo(ciudad)
+    }else {
+        console.log("busco todos los paquetes")
+        ref = database.ref('/paquetes/')
+    }
+    ref.on( 'value', (snapshot,err)=>{
        if(!snapshot.val()){
         console.log("no tiene paquetes")
         
