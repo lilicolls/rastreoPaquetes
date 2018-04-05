@@ -29,3 +29,10 @@ function findPackage(idPackage = "62 27 F2 8B") {
     })
 
 }
+
+function findPackages () {
+    database.ref('/paquetes/').on('child_added', (data)=>{
+        console.log(data.val())
+    })
+    
+}
