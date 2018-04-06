@@ -49,6 +49,7 @@ function findPackages (ciudad) {
        }else {
         console.log("tiene paquetes")
         console.log(snapshot.val())
+        fillTable(snapshot.val())               //llamo a la funcion para mostrar los datos en la tabla
        }
         
     })
