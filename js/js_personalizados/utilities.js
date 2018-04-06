@@ -45,4 +45,22 @@ function initMap() {
       position: uluru,
       map: map
     });
-  }
+}
+
+function updateInfPackage(obj){
+    console.log(obj)
+    const idPaquete = document.getElementById('idPaquete')
+    // const nombre = document.getElementById('nombre')
+    // const apellido = document.getElementById('apellido')
+    const salida = document.getElementById('salida')
+    const destino = document.getElementById('destino')
+    const unidad = document.getElementById('unidad')
+    const desc = document.getElementById('desc')
+
+    unidad.textContent = (`Unidad: ${obj.unidad}`)
+    idPaquete.textContent = (`Id paquete: ${obj.id}`)
+    salida.textContent = (`Salida: ${obj.salida}`)
+    desc.textContent = (`Descripcion: ${obj.descripcion}`)
+    
+
+}

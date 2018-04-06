@@ -11,8 +11,18 @@ function findPackage(idPackage = "62 27 F2 8B") {
         }else{
             //si el paquete existe obtengo los datos que quiera 
             // y busco la ubicacion del camion en el que esta
+            const paquete = {
+                id: snapshot.val().id_paquete,
+                unidad: snapshot.val().unidad,
+                apellido : snapshot.val().apellido,
+                salida : snapshot.val().salida,
+                destino : snapshot.val().destino,
+                unidad : snapshot.val().unidad,
+                descripcion : snapshot.val().unidad,
+            }
             const unidadTransp = snapshot.val().unidad
-            console.log(unidadTransp) 
+            updateInfPackage (paquete)
+            
             database.ref('/unidad/' + unidadTransp).once('value')
             .then((snapshot)=>{
                 if(!snapshot.val()){
