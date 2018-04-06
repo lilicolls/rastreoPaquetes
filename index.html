@@ -29,6 +29,7 @@
         <link href="css/color/verde.css" rel="stylesheet"><!-- Estilos de Color. -->
 
         <link href="https://cdnjs.cloudflare.com/ajax/libs/tabulator/3.4.6/css/tabulator.min.css" rel="stylesheet"> <!-- Estilos de tabla. -->
+        <link href="css/css_personalizados/map.css" rel="stylesheet"> <!-- Estilos de mapa. -->
 
         <!-- Librerias de FireBase - Inicio. -->
         <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
@@ -122,6 +123,7 @@
                         <button type="button" class="btn-sc btn-custom" id="btnBuscarPaquete" onClick="findPackage()">Buscar paquete por Id</button>
                         <button type="button" class="btn-sc btn-custom" id="btnBuscarPaquetes" onClick="findPackages()">Buscar todos los paquetes</button>
                         <button type="button" class="btn-sc btn-custom" id="btnBuscarPaquetes" onClick="findPackages('Maracaibo')">Buscar paquetes por estado</button>
+                        <button type="button" class="btn-sc btn-custom" id="btnModal" onClick="modal()">Prueba Modal</button>
                         <p class="text-muted sub-title">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.<br/> Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes.</p>
                     </div>
                 </div><!-- Fin del row. -->
@@ -144,6 +146,31 @@
           </div><!-- Fin del container. -->
       </section>
       <!-- Seccion Cuatro - Fin -->
+      <!-- Seccion Cinco - Inicio. -->
+      <section class="section bg-light" id="seccionCinco">
+        <div class="container"><!-- Inicio del container. -->
+            <div class="row"><!-- Inicio de row. -->
+                <div class="col-sm-12 text-center">
+                    <h3 class="title">Este es el modal para mostrar el detalle del paquete</h3>
+                    <div id = "infPackage">
+                      <ul style="list-style-type:disc">
+                        <li>Id Paquete:</li> 
+                        <li>Nombre:</li>
+                        <li>Apellido:</li>
+                        <li>Salida:</li>
+                        <li>Destino:</li>
+                        <li>Unidad:</li>
+                        <li>Descripción:</li>
+                      </ul>
+                    </div>
+                    <div id = "map"></div>
+                    
+                    <!-- <p class="text-muted sub-title">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.<br/> Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes.</p> -->
+                </div>
+            </div><!-- Fin del row. -->
+        </div><!-- Fin del container. -->
+    </section>
+    <!-- Seccion Cinco - Fin -->
 
         <!-- Pie de Pagina - Inicio. -->
         <footer class="section bg-gray footer">
@@ -184,5 +211,11 @@
          <script src="js\js_personalizados\package.js"></script>
          <script src ="js/js_personalizados/utilities.js"></script>
          <!-- JS Personalizados - Fin. -->
+          <!-- JS de Google Maps -Inicio -->
+         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAMlY8XSEiIhadWUSuLr5lgk7InHzoGbU8&callback=initMap"
+            async defer>
+          </script>
+          <!-- JS de Google Maps  -Fin -->
+
     </body>
 </html>
