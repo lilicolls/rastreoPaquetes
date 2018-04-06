@@ -7,7 +7,7 @@ const btnCerrarSesion = document.getElementById('btnCerrarSesion');
 const seccionUno = document.getElementById('seccionUno');
 const seccionDos = document.getElementById('seccionDos');
 const seccionTres = document.getElementById('seccionTres');
-const seccionCuatro = document.getElementById('seccionTres');
+const seccionCuatro = document.getElementById('seccionCuatro');
 var cedula = ''
 
 firebase.auth().onAuthStateChanged( firebaseUser => {
@@ -17,6 +17,7 @@ firebase.auth().onAuthStateChanged( firebaseUser => {
       seccionDos.style.display = "inline";//Aparecemos seccionUno.
       seccionTres.style.display = "inline";//Aparecemos seccionDos.
       seccionCuatro.style.display = "inline";//Aparecemos seccionCuatro.
+    
     }
     else {
       //console.log('No Logeado');

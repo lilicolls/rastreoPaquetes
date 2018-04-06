@@ -1,4 +1,4 @@
-$(document).ready(initiateTable)
+ $(document).ready(initiateTable)
 
 function initiateTable() {
    $('#tabla').tabulator({
@@ -12,11 +12,22 @@ function initiateTable() {
     //   {column:"ID Paquete", dir:"asc"},
     // ],    
       columns:[ //Define Table Columns
-          {title:"ID Paquete", field:"idPaquete", width:150},
+          {title:"ID Paquete", field:"id_paquete", width:150},
           {title:"Cédula Usuario", field:"cedula"},
-          {title:"Nombre Usuario", field:"nombre", align:"left", formatter:"progress"},
-          {title:"Descripcion", field:"Des"},
+          {title:"Nombre Usuario", field:"nombre", align:"left"},
+          {title:"Descripcion", field:"descripcion"},
           
       ],       
    })
 }
+
+function fillTable (obj){
+    //El metodo se encarga de convertir el objeto recibido en un arreglo
+    //y de llamar al metodo encargado de llenar la tabla.
+    let arr = []
+      Object.keys(obj).forEach((key)=>{
+          console.log( key)
+          arr.push(obj[key])
+      })
+      $("#tabla").tabulator("setData", arr);   
+  }

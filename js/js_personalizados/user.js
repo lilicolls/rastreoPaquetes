@@ -16,7 +16,8 @@ btnBuscarPorUsuario.addEventListener('click', ()=>{
        }else {
            
            console.log("si tiene paquetes")
-           console.log(snapshot.val())
+        //    console.log(snapshot.val())
+             fillTable(snapshot.val())
        }
    })
    .catch((err)=>{
