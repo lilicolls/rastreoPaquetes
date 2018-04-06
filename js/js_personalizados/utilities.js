@@ -1,4 +1,6 @@
  $(document).ready(initiateTable)
+var map = null; 
+var marker = null;
 
 function initiateTable() {
    $('#tabla').tabulator({
@@ -37,14 +39,16 @@ function fillTable (obj){
 function initMap() {
    console.log("hola")
     var uluru = {lat: -25.363, lng: 131.044};
-    var map = new google.maps.Map(document.getElementById('map'), {
+
+    map = new google.maps.Map(document.getElementById('map'), {
       zoom: 4,
       center: uluru
     });
-    var marker = new google.maps.Marker({
+    marker = new google.maps.Marker({
       position: uluru,
       map: map
     });
+   console.log(map, marker)
 }
 
 function updateInfPackage(obj){
@@ -63,4 +67,15 @@ function updateInfPackage(obj){
     desc.textContent = (`Descripcion: ${obj.descripcion}`)
     
 
+}
+
+function updateMapLocation() {
+    console.log(map, marker)
+    let latitude = parseInt( "54.91252",10)
+    let longtitude = parseInt("-1.37664",10)
+    myLatlng = new google.maps.LatLng(latitude, longtitude);
+    // console.log(this)
+     map.setCenter(myLatlng);
+     marker.setPosition(myLatlng);
+//    // map.setCenter(new google.maps.LatLng(latitude, longtitude));
 }
