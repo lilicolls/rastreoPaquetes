@@ -86,6 +86,8 @@ function updateMapLocation(obj) {
 
 }
 
-function prueba() {
-    alert ("ghogo")
+function closeModal() {
+    //cerrar modal y detener agentes de escucha
+    // falta agregar lo ultimo
+    seccionCinco.style.display = "none";//Aparecemos seccionUno.
 }
