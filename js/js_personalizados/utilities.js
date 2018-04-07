@@ -20,6 +20,7 @@ function initiateTable() {
           {title:"Descripcion", field:"descripcion"},
           
       ],  rowClick:function(e, row){ //trigger an alert message when the row is clicked
+        seccionCinco.style.display = "inline";//Aparecemos seccionUno.
         console.log(row.getData().id_paquete);
         findPackage(row.getData().id_paquete) //en caso de que el usuario haga click en una fila llamo a la funcion que busca en la base de datos
         //la info del id pulsado

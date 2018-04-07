@@ -8,6 +8,7 @@ const seccionUno = document.getElementById('seccionUno');
 const seccionDos = document.getElementById('seccionDos');
 const seccionTres = document.getElementById('seccionTres');
 const seccionCuatro = document.getElementById('seccionCuatro');
+const seccionCinco = document.getElementById('seccionCinco'); /// modal
 var cedula = ''
 
 firebase.auth().onAuthStateChanged( firebaseUser => {
