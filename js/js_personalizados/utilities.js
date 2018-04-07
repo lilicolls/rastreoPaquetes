@@ -48,11 +48,11 @@ function initMap() {
       position: uluru,
       map: map
     });
-   console.log(map, marker)
+//    console.log(map, marker)
 }
 
 function updateInfPackage(obj){
-    console.log(obj)
+    // console.log(obj)
     const idPaquete = document.getElementById('idPaquete')
     // const nombre = document.getElementById('nombre')
     // const apellido = document.getElementById('apellido')
@@ -69,13 +69,14 @@ function updateInfPackage(obj){
 
 }
 
-function updateMapLocation() {
-    console.log(map, marker)
-    let latitude = parseInt( "54.91252",10)
-    let longtitude = parseInt("-1.37664",10)
+function updateMapLocation(obj) {
+    console.log( obj.latitud)
+    console.log(obj.longitud)
+    
+    let latitude = parseInt( obj.latitud,10)
+    let longtitude = parseInt(obj.longitud,10)
     myLatlng = new google.maps.LatLng(latitude, longtitude);
-    // console.log(this)
      map.setCenter(myLatlng);
      marker.setPosition(myLatlng);
-//    // map.setCenter(new google.maps.LatLng(latitude, longtitude));
+
 }

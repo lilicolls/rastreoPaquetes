@@ -28,7 +28,8 @@ function findPackage(idPackage = "62 27 F2 8B") {
                 if(!snapshot.val()){
                     console.log("el camion no existe:(")
                 }else {
-                    console.log( snapshot.val())
+                    // console.log( snapshot.val())
+                    updateMapLocation(snapshot.val())
                     // llamo a la funcion que imprima los datos en texto mas el mapa
                 }
             })
