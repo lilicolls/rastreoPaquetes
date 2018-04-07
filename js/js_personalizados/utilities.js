@@ -14,12 +14,16 @@ function initiateTable() {
     //   {column:"ID Paquete", dir:"asc"},
     // ],    
       columns:[ //Define Table Columns
-          {title:"ID Paquete", field:"id_paquete", width:150},
+          {title:"ID Paquete", field:"id_paquete", width:150, onClick: "prueba()"},
           {title:"Cédula Usuario", field:"cedula"},
           {title:"Nombre Usuario", field:"nombre", align:"left"},
           {title:"Descripcion", field:"descripcion"},
           
-      ],       
+      ],  rowClick:function(e, row){ //trigger an alert message when the row is clicked
+        console.log(row.getData().id_paquete);
+        findPackage(row.getData().id_paquete) //en caso de que el usuario haga click en una fila llamo a la funcion que busca en la base de datos
+        //la info del id pulsado
+    },     
    })
 }
 
@@ -79,4 +83,8 @@ function updateMapLocation(obj) {
      map.setCenter(myLatlng);
      marker.setPosition(myLatlng);
 
+}
+
+function prueba() {
+    alert ("ghogo")
 }
