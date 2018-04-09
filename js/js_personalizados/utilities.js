@@ -46,7 +46,7 @@ function initMap() {
     var uluru = {lat: -25.363, lng: 131.044};
 
     map = new google.maps.Map(document.getElementById('map'), {
-      zoom: 4,
+      zoom: 10,
       center: uluru
     });
     marker = new google.maps.Marker({
@@ -59,7 +59,7 @@ function initMap() {
 function updateInfPackage(obj){
     // console.log(obj)
     const idPaquete = document.getElementById('idPaquete')
-    // const nombre = document.getElementById('nombre')
+    const nombre = document.getElementById('nombre')
     // const apellido = document.getElementById('apellido')
     const salida = document.getElementById('salida')
     const destino = document.getElementById('destino')
@@ -67,6 +67,8 @@ function updateInfPackage(obj){
     const desc = document.getElementById('desc')
 
     unidad.textContent = (`Unidad: ${obj.unidad}`)
+    nombre.textContent = (`Nombre: ${obj.nombre}`)
+    destino.textContent = (`Destino: ${obj.destino}`)
     idPaquete.textContent = (`Id paquete: ${obj.id}`)
     salida.textContent = (`Salida: ${obj.salida}`)
     desc.textContent = (`Descripcion: ${obj.descripcion}`)

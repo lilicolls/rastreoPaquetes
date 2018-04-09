@@ -13,26 +13,39 @@ function findPackage(idPackage = "62 27 F2 8B") {
             // y busco la ubicacion del camion en el que esta
             const paquete = {
                 id: snapshot.val().id_paquete,
-                unidad: snapshot.val().unidad,
+                nombre: snapshot.val().nombre,
                 apellido : snapshot.val().apellido,
                 salida : snapshot.val().salida,
                 destino : snapshot.val().destino,
                 unidad : snapshot.val().unidad,
-                descripcion : snapshot.val().unidad,
+                descripcion : snapshot.val().descripcion,
             }
             const unidadTransp = snapshot.val().unidad
             updateInfPackage (paquete)
             
-            database.ref('/unidad/' + unidadTransp).once('value')
-            .then((snapshot)=>{
-                if(!snapshot.val()){
-                    console.log("el camion no existe:(")
+            database.ref('/unidad/' + unidadTransp).on('value', (data)=>{
+                console.log(data.val())
+
+                if(!data.val()){
+                    console.log("el camion no existe :(")
                 }else {
-                    // console.log( snapshot.val())
-                    updateMapLocation(snapshot.val())
+                    console.log( data.val())
+                    updateMapLocation(data.val())
                     // llamo a la funcion que imprima los datos en texto mas el mapa
                 }
+            
             })
+            
+            // database.ref('/unidad/' + unidadTransp).once('value')
+            // .then((snapshot)=>{
+            //     if(!snapshot.val()){
+            //         console.log("el camion no existe:(")
+            //     }else {
+            //         // console.log( snapshot.val())
+            //         updateMapLocation(snapshot.val())
+            //         // llamo a la funcion que imprima los datos en texto mas el mapa
+            //     }
+            // })
         }
     })
     .catch((err)=>{
