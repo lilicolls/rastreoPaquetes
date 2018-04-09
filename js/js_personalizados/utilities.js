@@ -93,3 +93,23 @@ function closeModal() {
     // falta agregar lo ultimo
     seccionCinco.style.display = "none";//Aparecemos seccionUno.
 }
+
+function selectCity() {
+    let cities = ["Barquisimeto", "Maracaibo", "Valencia", "Anzoategui", "Mérida", "Carabobo"];
+    let select = document.createElement("select")
+    const length = cities.length
+    for (let i = 0; i< length; i++){
+        var option = document.createElement("option")
+        option.value = cities[i]
+        option.text = cities[i]
+        select.appendChild(option)
+    }
+    console.log(option)
+    swal({
+        content: select
+    }).then(()=>{
+        city = select.options[select.selectedIndex].text;
+        findPackages(city)
+    })
+    
+}
