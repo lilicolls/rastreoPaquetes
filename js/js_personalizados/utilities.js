@@ -106,7 +106,10 @@ function selectCity() {
     }
     console.log(option)
     swal({
-        content: select
+        content: select,
+        title: "Por favor selecciona uno",
+        text: "Elige la ciudad de destino del paquete a buscar",
+        icon: "info",
     }).then(()=>{
         city = select.options[select.selectedIndex].text;
         findPackages(city)
