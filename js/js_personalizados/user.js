@@ -55,3 +55,21 @@ function validateId() {
         findUserPackage(cedula)
     }
 }
+
+function  validateUser(cedula){
+    console.log("busco rol del usuario por su cedula")
+    database.ref('/usuarios/' + cedula).child('cuenta').once('value')
+    .then((snapshot)=>{
+        console.log(snapshot.val())
+        if(snapshot.val()== "Cliente"){
+                ///El usuario tiene rol de cliente
+                console.log("el usuario es cliente")
+        }else {
+                ///El usuario es un supervisor
+                console.log("el usuario es supervisor")
+        }
+    })
+    .catch((err)=>{
+        console.log(`ocurrio un error al buscar el rol del usuario ${err}`)
+    })
+}
