@@ -96,12 +96,12 @@
 
           <div class="row"><!-- Inicio del row. -->
             <div class="col-sm-12 text-center"><!-- Inicio de Columna. -->
-              <div  class="contact-form">
+              <form  class="contact-form" onsubmit="login()">
                 <div class="form-group"><!-- Email. -->
                   <input type="email" class="form-control" id="txtEmail"  placeholder="Email" autocomplete="off">
                 </div>
                 <div class="form-group"><!-- Cedula. -->
-                  <input type="text" class="form-control" id="txtCedula"  placeholder="v- Cedula" autocomplete="off">
+                  <input type="text" class="form-control" id="txtCedula"  placeholder="v- Cedula" autocomplete="off" required>
                 </div>
                 <div class="form-group"><!-- Contraseña. -->
                   <input type="password" class="form-control" id="txtPassword" placeholder="Contraseña" autocomplete="off">
@@ -110,11 +110,12 @@
                 <div class="row"><!-- Inicio del row. -->
                   <div class="col-xs-12"><!-- Inicio de Columna. -->
                     <div class="text-center">
-                      <button type="button" class="btn btn-custom" id="btnInicioSesion">INICIAR SESEÓN</button>
+                        <input type="submit" class="btn btn-custom" id="btnInicioSesion" >
+                      <!-- <button type="button" class="btn btn-custom" id="btnInicioSesion">INICIAR SESEÓN</button> -->
                     </div>
                   </div><!-- Fin de Columna. -->
                 </div><!-- Fin del row. -->
-                </div>
+                </form>
               </div><!-- Fin de Columna. -->
             </div><!-- Fin del row. -->
           </div><!-- Fin del container. -->
@@ -142,10 +143,10 @@
                 <div class="row"><!-- Inicio de row. -->
                     <div class="col-sm-12 text-center">
                         <h3 class="title">TÍtulo</h3>
-                        <button type="button" class="btn-sc btn-custom" id="btnBuscarPorUsuario" onClick = "validateId()">Rastrea tu paquete</button>
+                        <button type="button" class="btn-sc btn-custom" id="btnBuscarPorUsuario" onClick = "validateId()" style="display:none" >Rastrea tu paquete</button>
                         <!-- <button type="button" class="btn-sc btn-custom" id="btnBuscarPaquete" onClick="findPackage()">Buscar paquete por Id</button> -->
-                        <button type="button" class="btn-sc btn-custom" id="btnBuscarPaquetes" onClick="findPackages()">Buscar todos los paquetes</button>
-                        <button type="button" class="btn-sc btn-custom" id="btnBuscarPaquetes" onClick="selectCity()">Buscar paquetes por estado</button>
+                        <button type="button" class="btn-sc btn-custom" id="btnBuscarPaquetes" onClick="findPackages()" style="display:none" >Buscar todos los paquetes</button>
+                        <button type="button" class="btn-sc btn-custom" id="btnBuscarPaquetesCiudad" onClick="selectCity()" style="display:none" >Buscar paquetes por estado</button>
                         <!-- <button type="button" class="btn-sc btn-custom" id="btnModal" onClick="modal()">Prueba Modal</button>
                         <button type="button" class="btn-sc btn-custom" id="btnMap" onClick="updateMapLocation()">Prueba actualizar valor mapa</button> -->
                         

@@ -33,7 +33,9 @@ firebase.auth().onAuthStateChanged( firebaseUser => {
       principalMenu.style.display = "none";//Desaparecemos barra menu superior.
     }
   });
-btnInicioSesion.addEventListener('click', ()=>{
+// btnInicioSesion.addEventListener('click', ()=>{
+function login(){
+    console.log("click")
     const email = txtEmail.value;
     const pass = txtPassword.value;
     cedula = txtCedula.value;
@@ -44,14 +46,16 @@ btnInicioSesion.addEventListener('click', ()=>{
             title: "¡Bienvenido!",
             icon: "success",
           })
-        // .then(()=>{
-        //   validateUser(cedula)
-        // }) 
+        .then(()=>{
+          validateUser(cedula)
+        }) 
     }) 
     .catch((err)=>{
         console.log(err)
     }) 
-})
+
+}    
+// })
 
 btnCerrarSesion.addEventListener('click', e => {
     firebase.auth().signOut();
@@ -59,16 +63,24 @@ btnCerrarSesion.addEventListener('click', e => {
 
 
   function  validateUser(cedula){
+    const btnBuscarPorUsuario = document.getElementById('btnBuscarPorUsuario');
+    const btnBuscarPaquetes = document.getElementById('btnBuscarPaquetes');
+    const btnBuscarPaquetesCiudad = document.getElementById('btnBuscarPaquetesCiudad');
     console.log("busco rol del usuario por su cedula")
     database.ref('/usuarios/' + cedula).child('cuenta').once('value')
     .then((snapshot)=>{
         console.log(snapshot.val())
+        //agregar validacion de que el usuario exista en caso de que se pueda logear por el metodo auth
+        //pero que no se tenga informacion por su cedula en la base de datos
         if(snapshot.val()== "Cliente"){
                 ///El usuario tiene rol de cliente
                 console.log("el usuario es cliente")
-        }else {
+                btnBuscarPorUsuario.style.display = "inline";//
+        }else if(snapshot.val()== "Supervisor") {
                 ///El usuario es un supervisor
                 console.log("el usuario es supervisor")
+                btnBuscarPaquetes.style.display = "inline";//
+                btnBuscarPaquetesCiudad.style.display = "inline";//
         }
     })
     .catch((err)=>{
