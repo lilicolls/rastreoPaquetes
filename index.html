@@ -48,7 +48,29 @@
       
         <!-- Librerias de FireBase - Fin. -->
     </head>
-    <body data-spy="scroll" data-target="#navbar-menu">
+    <body data-spy="scroll" data-target="#navbar-menu" >
+
+
+
+     
+      <!-- menu -->
+    <div id ="principal-menu" style= "display:none">
+      <div class="navbar-collapse collapse" id="navbar-menu">
+          <!-- Navbar right -->
+          <ul class="nav navbar-nav navbar-right">
+            
+              <li>
+                  <button type="button" class="btn btn-white-fill navbar-btn" id="btnCerrarSesion">CERRAR SESIÓN</button>
+                  <!-- <a href="" class="btn btn-white-fill navbar-btn">Try for Free</a> -->
+              </li>
+          </ul>
+
+      </div>
+    </div>
+      <!--/Menu -->
+
+<!-- End navbar-custom -->
+
 
       <!-- Titulo - Inicio. -->
       <section class="bg-custom header-title-box">
@@ -107,7 +129,7 @@
                         <!-- <h3 class="title">TÍtulo</h3>
                         <p class="text-muted sub-title">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.<br/> Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes.</p> -->
                         </br>
-                        <button type="button" class="btn-sc btn-custom" id="btnCerrarSesion">CERRAR SESEÓN</button>
+                        <!-- <button type="button" class="btn-sc btn-custom" id="btnCerrarSesion">CERRAR SESEÓN</button> -->
                     </div>
                 </div><!-- Fin del row. -->
             </div><!-- Fin del container. -->
@@ -120,7 +142,7 @@
                 <div class="row"><!-- Inicio de row. -->
                     <div class="col-sm-12 text-center">
                         <h3 class="title">TÍtulo</h3>
-                        <button type="button" class="btn-sc btn-custom" id="btnBuscarPorUsuario" onClick = "validateId()">Buscar mis paquetes</button>
+                        <button type="button" class="btn-sc btn-custom" id="btnBuscarPorUsuario" onClick = "validateId()">Rastrea tu paquete</button>
                         <!-- <button type="button" class="btn-sc btn-custom" id="btnBuscarPaquete" onClick="findPackage()">Buscar paquete por Id</button> -->
                         <button type="button" class="btn-sc btn-custom" id="btnBuscarPaquetes" onClick="findPackages()">Buscar todos los paquetes</button>
                         <button type="button" class="btn-sc btn-custom" id="btnBuscarPaquetes" onClick="selectCity()">Buscar paquetes por estado</button>

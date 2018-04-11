@@ -9,6 +9,7 @@ const seccionDos = document.getElementById('seccionDos');
 const seccionTres = document.getElementById('seccionTres');
 const seccionCuatro = document.getElementById('seccionCuatro');
 const seccionCinco = document.getElementById('seccionCinco'); /// modal
+const principalMenu = document.getElementById('principal-menu'); // barra menu superior
 var cedula = ''
 
 firebase.auth().onAuthStateChanged( firebaseUser => {
@@ -18,6 +19,9 @@ firebase.auth().onAuthStateChanged( firebaseUser => {
       seccionDos.style.display = "inline";//Aparecemos seccionUno.
       seccionTres.style.display = "inline";//Aparecemos seccionDos.
       seccionCuatro.style.display = "inline";//Aparecemos seccionCuatro.
+      principalMenu.style.display = "inline";//Aparecemos barra menu superior.
+    
+     // validateUser(cedula)
     
     }
     else {
@@ -26,6 +30,7 @@ firebase.auth().onAuthStateChanged( firebaseUser => {
       seccionDos.style.display = "none";//Desaparecemos seccionUno.
       seccionTres.style.display = "none";//Desaparecemos seccionDos.
       seccionCuatro.style.display = "none";//Desaparecemos seccionCuatro.
+      principalMenu.style.display = "none";//Desaparecemos barra menu superior.
     }
   });
 btnInicioSesion.addEventListener('click', ()=>{
@@ -39,9 +44,9 @@ btnInicioSesion.addEventListener('click', ()=>{
             title: "¡Bienvenido!",
             icon: "success",
           })
-        .then(()=>{
-          validateUser(cedula)
-        }) 
+        // .then(()=>{
+        //   validateUser(cedula)
+        // }) 
     }) 
     .catch((err)=>{
         console.log(err)
