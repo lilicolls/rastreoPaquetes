@@ -13,10 +13,20 @@ function findUserPackage(cedula){
        //el resultado de la busqueda se obtine en el objeto snapshot!!
        if(!snapshot.val()){
         console.log("no tiene paquetes")
+        swal({
+            
+            title: "¡No se ha encontrado!",
+            text: "Actualmente no tenemos un paquete registrado a su nombre. Por favor intente más tarde o póngase en contacto con el remitente"
+
+        })
        }else {
            
            console.log("si tiene paquetes")
-        //    console.log(snapshot.val())
+           swal({
+               icon: "info",
+               title: "¡Conoce la informacion en tiempo real!",
+               text: "Haz click en la tabla sobre el paquete que desees rastrear."
+           })
              fillTable(snapshot.val())
        }
    })

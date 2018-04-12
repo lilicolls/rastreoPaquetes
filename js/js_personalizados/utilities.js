@@ -20,7 +20,7 @@ function initiateTable() {
           {title:"Descripcion", field:"descripcion"},
           
       ],  rowClick:function(e, row){ //trigger an alert message when the row is clicked
-        seccionCinco.style.display = "inline";//Aparecemos seccionUno.
+        seccionCinco.style.display = "inline";//Aparecemos modal.
         console.log(row.getData().id_paquete);
         findPackage(row.getData().id_paquete) //en caso de que el usuario haga click en una fila llamo a la funcion que busca en la base de datos
         //la info del id pulsado
@@ -60,7 +60,7 @@ function updateInfPackage(obj){
     // console.log(obj)
     const idPaquete = document.getElementById('idPaquete')
     const nombre = document.getElementById('nombre')
-    // const apellido = document.getElementById('apellido')
+    const apellido = document.getElementById('apellido')
     const salida = document.getElementById('salida')
     const destino = document.getElementById('destino')
     const unidad = document.getElementById('unidad')
@@ -72,6 +72,8 @@ function updateInfPackage(obj){
     idPaquete.textContent = (`Id paquete: ${obj.id}`)
     salida.textContent = (`Salida: ${obj.salida}`)
     desc.textContent = (`Descripcion: ${obj.descripcion}`)
+    apellido.textContent = (`Apellido: ${obj.apellido}`)
+    console.log(obj.apellido)
     
 
 }

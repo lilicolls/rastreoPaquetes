@@ -35,13 +35,15 @@ firebase.auth().onAuthStateChanged( firebaseUser => {
   });
 // btnInicioSesion.addEventListener('click', ()=>{
 function login(){
+    event.preventDefault()
     console.log("click")
     const email = txtEmail.value;
     const pass = txtPassword.value;
     cedula = txtCedula.value;
+   
     firebase.auth().signInWithEmailAndPassword(email, pass)     
     .then(()=>{
-        console.log("working")
+        console.log("login exitoso")
         swal({
             title: "¡Bienvenido!",
             icon: "success",
@@ -52,6 +54,16 @@ function login(){
     }) 
     .catch((err)=>{
         console.log(err)
+        swal({
+            icon: "error",
+            title: "Error al autenticar",
+            text: err.message,
+            buttons: false,
+            timer: 3000,
+            
+          
+
+        })
     }) 
 
 }    
@@ -59,6 +71,10 @@ function login(){
 
 btnCerrarSesion.addEventListener('click', e => {
     firebase.auth().signOut();
+    btnBuscarPaquetes.style.display = "none";//
+    btnBuscarPaquetesCiudad.style.display = "none";//
+    btnBuscarPorUsuario.style.display = "none";//
+    btnBuscarPaqueteId.style.display = "none";//
   });
 
 
@@ -66,6 +82,7 @@ btnCerrarSesion.addEventListener('click', e => {
     const btnBuscarPorUsuario = document.getElementById('btnBuscarPorUsuario');
     const btnBuscarPaquetes = document.getElementById('btnBuscarPaquetes');
     const btnBuscarPaquetesCiudad = document.getElementById('btnBuscarPaquetesCiudad');
+    const btnBuscarPaqueteId = document.getElementById('btnBuscarPaqueteId')
     console.log("busco rol del usuario por su cedula")
     database.ref('/usuarios/' + cedula).child('cuenta').once('value')
     .then((snapshot)=>{
@@ -81,6 +98,7 @@ btnCerrarSesion.addEventListener('click', e => {
                 console.log("el usuario es supervisor")
                 btnBuscarPaquetes.style.display = "inline";//
                 btnBuscarPaquetesCiudad.style.display = "inline";//
+                btnBuscarPaqueteId.style.display = "inline"
         }
     })
     .catch((err)=>{
