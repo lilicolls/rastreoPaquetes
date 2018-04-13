@@ -77,6 +77,11 @@ function findPackages (ciudad) {
     ref.on( 'value', (snapshot,err)=>{
        if(!snapshot.val()){
         console.log("no tiene paquetes")
+        swal({
+            icon: "warning",
+            title: "¡No se ha encontrado!",
+            text: `No hay paquetes registrados con el destino ${ciudad}. Por favor intente más tarde .`
+        })
         
        }else {
         console.log("tiene paquetes")

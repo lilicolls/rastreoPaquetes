@@ -1,6 +1,7 @@
  $(document).ready(initiateTable)
 var map = null; 
 var marker = null;
+const iconBase = 'imagenes/truck.png';
 
 function initiateTable() {
    $('#tabla').tabulator({
@@ -51,7 +52,8 @@ function initMap() {
     });
     marker = new google.maps.Marker({
       position: uluru,
-      map: map
+      map: map,
+       icon: iconBase 
     });
 //    console.log(map, marker)
 }
