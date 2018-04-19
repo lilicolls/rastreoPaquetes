@@ -22,7 +22,7 @@ function initiateTable() {
           
       ],  rowClick:function(e, row){ //trigger an alert message when the row is clicked
         seccionCinco.style.display = "inline";//Aparecemos modal.
-        console.log(row.getData().id_paquete);
+        // console.log(row.getData().id_paquete);
         findPackage(row.getData().id_paquete) //en caso de que el usuario haga click en una fila llamo a la funcion que busca en la base de datos
         //la info del id pulsado
     },     
@@ -34,7 +34,7 @@ function fillTable (obj){
     //y de llamar al metodo encargado de llenar la tabla.
     let arr = []
       Object.keys(obj).forEach((key)=>{
-          console.log( key)
+        //   console.log( key)
           arr.push(obj[key])
       })
       $("#tabla").tabulator("setData", arr);   
@@ -43,7 +43,7 @@ function fillTable (obj){
 
 
 function initMap() {
-   console.log("hola")
+//    console.log("hola")
     var uluru = {lat: -25.363, lng: 131.044};
 
     map = new google.maps.Map(document.getElementById('map'), {
@@ -84,8 +84,9 @@ function updateMapLocation(obj) {
     console.log( obj.latitud)
     console.log(obj.longitud)
     
-    let latitude = parseInt( obj.latitud,10)
-    let longtitude = parseInt(obj.longitud,10)
+    let latitude = parseFloat( obj.latitud)
+    let longtitude = parseFloat(obj.longitud)
+    console.log(`mando a graficar la latitud ${latitude} y la longitud ${longtitude}`)
     myLatlng = new google.maps.LatLng(latitude, longtitude);
      map.setCenter(myLatlng);
      marker.setPosition(myLatlng);
@@ -110,7 +111,7 @@ function closeModal() {
 
 var body = document.getElementById('total-body');
 body.addEventListener('click', function(){
-    console.log("click en el body")
+    // console.log("click en el body")
 })
 function selectCity() {
     let cities = ["Barquisimeto", "Maracaibo", "Valencia", "Anzoategui", "Mérida", "Carabobo"];

@@ -61,7 +61,7 @@ function validateId() {
             findUserPackage(cedula)
         })
     }else {
-        console.log("hago la busqueda normal")
+        // console.log("hago la busqueda normal")
         findUserPackage(cedula)
     }
 }
