@@ -50,8 +50,7 @@
       
         <!-- Librerias de FireBase - Fin. -->
     </head>
-    <body data-spy="scroll" data-target="#navbar-menu" >
-
+    <body data-spy="scroll" data-target="#navbar-menu" id = "total-body" >
 
 
      
@@ -79,7 +78,7 @@
         <div class="container"><!-- Inicio del container. -->
           <div class="row">
             <div class="col-sm-12 text-center">
-              <h3 class="text-white" style="display:inline-block">Encomienda</h3>
+              <h3 class="text-white" style="display:inline-block">Servicio de encomiendas</h3>
               <img style="display:inline-block" src="https://png.icons8.com/ios/50/000000/in-transit.png">
             </div>
           </div>
@@ -99,7 +98,7 @@
 
           <div class="row"><!-- Inicio del row. -->
             <div class="col-sm-12 text-center"><!-- Inicio de Columna. -->
-              <form  class="contact-form" onsubmit="login()">
+              <form  class="contact-form" onsubmit="login(event)">
                 <div class="form-group"><!-- Email. -->
                   <input type="email" class="form-control" id="txtEmail"  placeholder="Email" autocomplete="off">
                 </div>
@@ -228,7 +227,7 @@
           </div><!-- Fin del container. -->
         </footer>
         <!-- Pie de Pagina - Fin. -->
-
+   
        
         <!-- js placed at the end of the document so the pages load faster -->
         <script src="js/jquery-2.1.4.min.js"></script>

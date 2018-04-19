@@ -34,7 +34,7 @@ firebase.auth().onAuthStateChanged( firebaseUser => {
     }
   });
 // btnInicioSesion.addEventListener('click', ()=>{
-function login(){
+function login(event){
     event.preventDefault()
     console.log("click")
     const email = txtEmail.value;

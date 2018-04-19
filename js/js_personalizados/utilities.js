@@ -98,6 +98,20 @@ function closeModal() {
     seccionCinco.style.display = "none";//Aparecemos seccionUno.
 }
 
+// window.onclick = function(event) {
+    
+//     var hijos = document.getElementById("seccionCinco").childNodes
+//     console.log(hijos)
+//     if (event.target != hijos) {
+        
+//     }
+//     console.log(event.target)
+// }
+
+var body = document.getElementById('total-body');
+body.addEventListener('click', function(){
+    console.log("click en el body")
+})
 function selectCity() {
     let cities = ["Barquisimeto", "Maracaibo", "Valencia", "Anzoategui", "Mérida", "Carabobo"];
     let select = document.createElement("select")
