@@ -70,3 +70,14 @@
     border: 1px solid #0cf7b0;
     text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.3);
   }
+
+  span {
+    cursor:pointer;
+    color:blue;
+    text-decoration:underline;
+}
+
+span:hover {
+  text-decoration:none;
+  color: #697f97
+}

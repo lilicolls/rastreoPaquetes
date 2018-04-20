@@ -75,7 +75,7 @@ btnCerrarSesion.addEventListener('click', e => {
     btnBuscarPaquetesCiudad.style.display = "none";//
     btnBuscarPorUsuario.style.display = "none";//
     btnBuscarPaqueteId.style.display = "none";//
-  });
+});
 
 
   function  validateUser(cedula){
@@ -104,4 +104,27 @@ btnCerrarSesion.addEventListener('click', e => {
     .catch((err)=>{
         console.log(`ocurrio un error al buscar el rol del usuario ${err}`)
     })
+}
+
+function resetPassword (){
+    const email = txtEmail.value;
+    firebase.auth().sendPasswordResetEmail(email).then(function() {
+        // Email sent.
+        console.log(`se envio un correo a ${email}`)
+        swal({
+            title: "¡Email enviado!",
+            text: `Se ha enviado un correo a ${email} para restaurar su contraseña`,
+            icon: "success",
+          })
+      }).catch(function(error) {
+        // An error happened.
+        swal({
+            icon: "error",
+            title: "Error al restaurar su contraseña",
+            text: error.message,
+            buttons: false,
+            timer: 3000,
+        })
+      
+      });
 }
