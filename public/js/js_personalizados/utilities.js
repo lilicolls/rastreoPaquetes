@@ -99,16 +99,13 @@ function closeModal() {
     seccionCinco.style.display = "none";//Aparecemos seccionUno.
 }
 
-// window.onclick = function(event) {
-    
-//     var hijos = document.getElementById("seccionCinco").childNodes
-//     console.log(hijos)
-//     if (event.target != hijos) {
-        
-//     }
-//     console.log(event.target)
-// }
+const modal = document.getElementById('seccionCinco')
 
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
 var body = document.getElementById('total-body');
 body.addEventListener('click', function(){
     // console.log("click en el body")

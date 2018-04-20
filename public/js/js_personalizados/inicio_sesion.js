@@ -99,6 +99,16 @@ btnCerrarSesion.addEventListener('click', e => {
                 btnBuscarPaquetes.style.display = "inline";//
                 btnBuscarPaquetesCiudad.style.display = "inline";//
                 btnBuscarPaqueteId.style.display = "inline"
+        }else {
+            //la cedula no esta registrada por lo que no se conoce rol
+            swal({
+                icon: "error",
+                title: "¡Rol no asignado!",
+                text: "Usuario sin información almancenada",
+                buttons: false,
+                timer: 3000,
+            })
+            firebase.auth().signOut();
         }
     })
     .catch((err)=>{
