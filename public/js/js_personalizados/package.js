@@ -16,6 +16,7 @@ function findPackage(idPackage = "62 27 F2 8B") {
         }else{
             //si el paquete existe obtengo los datos que quiera 
             // y busco la ubicacion del camion en el que esta
+             console.log(snapshot.val())
             const paquete = {
                 id: snapshot.val().id_paquete,
                 nombre: snapshot.val().nombre,
@@ -24,35 +25,35 @@ function findPackage(idPackage = "62 27 F2 8B") {
                 destino : snapshot.val().destino,
                 unidad : snapshot.val().unidad,
                 descripcion : snapshot.val().descripcion,
+                status: snapshot.val().status,
             }
+
             console.log(paquete)
             const unidadTransp = snapshot.val().unidad
             updateInfPackage (paquete)
+             if (paquete.status) {
+                //el paquete esta disponible, muestro en el mapa la ubicacion de la tienda para que lo retire
+                console.log("paquete disponible muestro ubicacion de la store")
+                findStore(paquete.destino)
+             } else {
+                // el paquete aun no esta disponible, muestro la ubicacion del camion en tiempo real
+                console.log("paquete disponible muestro ubicacion del camion")
+                findTruck(unidadTransp)
+             }
             
-            database.ref('/unidad/' + unidadTransp).on('value', (data)=>{
-                console.log(data.val())
+            // database.ref('/unidad/' + unidadTransp).on('value', (data)=>{
+            //     console.log(data.val())
 
-                if(!data.val()){
-                    console.log("el camion no existe :(")
+            //     if(!data.val()){
+            //         console.log("el camion no existe :(")
                     
-                }else {
-                    console.log( data.val())
-                    updateMapLocation(data.val())
-                    // llamo a la funcion que imprima los datos en texto mas el mapa
-                    seccionCinco.style.display = "inline";//Aparecemos modal.
-                }
-            
-            })
-            
-            // database.ref('/unidad/' + unidadTransp).once('value')
-            // .then((snapshot)=>{
-            //     if(!snapshot.val()){
-            //         console.log("el camion no existe:(")
             //     }else {
-            //         // console.log( snapshot.val())
-            //         updateMapLocation(snapshot.val())
+            //         console.log( data.val())
+            //         updateMapLocation(data.val())
             //         // llamo a la funcion que imprima los datos en texto mas el mapa
+                     seccionCinco.style.display = "inline";//Aparecemos modal.
             //     }
+            
             // })
         }
     })
@@ -62,6 +63,37 @@ function findPackage(idPackage = "62 27 F2 8B") {
 
 }
 
+function findStore(destino) {
+    console.log(`voy a buscar en ${destino}`)
+    database.ref('/destinos/' + destino).once('value')
+    .then((snapshot)=>{
+        console.log("la ubicacion de la tienda es:")
+        console.log(snapshot.val())
+        updateMapLocation(snapshot.val(), "store")
+    })
+    .catch((err)=>{
+        console.log(err)
+    })
+
+}
+
+function findTruck (idTruck) {
+     database.ref('/unidad/' + idTruck).on('value', (data)=>{
+              //  console.log(data.val())
+
+                if(!data.val()){
+                    console.log("el camion no existe :(")
+                    
+                }else {
+                  //  console.log( data.val())
+                    updateMapLocation(data.val(), "truck")
+                    // llamo a la funcion que imprima los datos en texto mas el mapa
+                    seccionCinco.style.display = "inline";//Aparecemos modal.
+                }
+            
+            })
+
+}
 function findPackages (ciudad) {
     //metodo para filtrar la busqueda de paquetess
     // si el usuario proporciona una ciudad, el metodo retorna los paquetes de dicha ciudad

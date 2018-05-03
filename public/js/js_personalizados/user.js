@@ -20,14 +20,28 @@ function findUserPackage(cedula){
 
         })
        }else {
+        //    console.log(snapshot.val())
+        //    console.log(typeof(snapshot.val()))
+        //    console.log("si tiene paquetes")
            
-           console.log("si tiene paquetes")
-           swal({
-               icon: "info",
-               title: "¡Conoce la informacion en tiempo real!",
-               text: "Haz click en la tabla sobre el paquete que desees rastrear."
-           })
-             fillTable(snapshot.val())
+        //    var userPackageId = snapshot.val().nombre
+
+        //      let prueba = (Object.values(snapshot.val()))
+           //  console.log(prueba[0].apellipo)
+            //  console.log(typeof(userPackageId))
+             swal({
+                icon: "info",
+                title: "¡Conoce la informacion en tiempo real!",
+                text: "Haz click en la tabla sobre el paquete que desees rastrear."
+            })
+
+            let data = snapshot.val()
+            Object.keys(data).forEach((key)=>{
+                let idUserPackage = key
+                findInfoPackage(key)
+                console.log( key)
+                
+              })
        }
    })
    .catch((err)=>{
@@ -35,6 +49,12 @@ function findUserPackage(cedula){
    })
 }
 
+function findInfoPackage (id) {
+    //metodo para obtener y llenar en la tabla la informacion de cada paquete del usuario
+    database.ref('/paquetes/'+ id).on('value', (data)=>{
+        console.log(data.val())
+    })
+    
 function validateId() {
     //en el metodo se valida si se conoce la cedula del usuario para hacer la busqueda de sus paquetes en la base de datos
     //si no se posee la cedula se le solicita y posteriormente se realiza la busqueda con la cedula obtenida
@@ -65,6 +85,3 @@ function validateId() {
         findUserPackage(cedula)
     }
 }
-
-
-

@@ -1,7 +1,7 @@
  $(document).ready(initiateTable)
 var map = null; 
 var marker = null;
-const iconBase = 'imagenes/truck.png';
+const iconBase = 'imagenes/location.png';
 
 function initiateTable() {
    $('#tabla').tabulator({
@@ -15,10 +15,13 @@ function initiateTable() {
     //   {column:"ID Paquete", dir:"asc"},
     // ],    
       columns:[ //Define Table Columns
+        {title:"Status", field:"status", width:80,  align:"center", formatter:"tickCross", sorter:"boolean",},
           {title:"ID Paquete", field:"id_paquete", width:150, onClick: "prueba()"},
           {title:"Cédula Usuario", field:"cedula"},
           {title:"Nombre Usuario", field:"nombre", align:"left"},
           {title:"Descripcion", field:"descripcion"},
+          
+          
           
       ],  rowClick:function(e, row){ //trigger an alert message when the row is clicked
         seccionCinco.style.display = "inline";//Aparecemos modal.
@@ -34,7 +37,7 @@ function fillTable (obj){
     //y de llamar al metodo encargado de llenar la tabla.
     let arr = []
       Object.keys(obj).forEach((key)=>{
-        //   console.log( key)
+        console.log( key)
           arr.push(obj[key])
       })
       $("#tabla").tabulator("setData", arr);   
@@ -53,7 +56,7 @@ function initMap() {
     marker = new google.maps.Marker({
       position: uluru,
       map: map,
-       icon: iconBase 
+    icon: iconBase 
     });
 //    console.log(map, marker)
 }
@@ -80,9 +83,14 @@ function updateInfPackage(obj){
 
 }
 
-function updateMapLocation(obj) {
-    console.log( obj.latitud)
-    console.log(obj.longitud)
+function updateMapLocation(obj, str) {
+    // console.log( obj.latitud)
+    // console.log(obj.longitud)
+    if (str == "store"){
+        marker.setIcon('imagenes/store.png')
+    }else {
+        marker.setIcon('imagenes/truck.png')
+    }
     
     let latitude = parseFloat( obj.latitud)
     let longtitude = parseFloat(obj.longitud)
