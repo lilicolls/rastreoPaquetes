@@ -64,6 +64,7 @@ function findPackage(idPackage = "62 27 F2 8B") {
 }
 
 function findStore(destino) {
+    //metodo para obtener la ubicacion (lat-long) de las tiendas
     console.log(`voy a buscar en ${destino}`)
     database.ref('/destinos/' + destino).once('value')
     .then((snapshot)=>{
@@ -113,17 +114,14 @@ function findPackages (ciudad) {
             icon: "warning",
             title: "¡No se ha encontrado!",
             text: `No hay paquetes registrados con el destino ${ciudad}. Por favor intente más tarde .`
-        })
-        
+        })   
        }else {
         console.log("tiene paquetes")
         console.log(snapshot.val())
-        fillTable(snapshot.val())               //llamo a la funcion para mostrar los datos en la tabla
-       }
-        
+       fillTable(snapshot.val())               //llamo a la funcion para mostrar los datos en la tabla 
+       }     
     })
     
-   
 }
 
 function getPackageId() {

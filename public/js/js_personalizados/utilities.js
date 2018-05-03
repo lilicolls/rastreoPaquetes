@@ -11,15 +11,16 @@ function initiateTable() {
     paginationSize:7, // number of rows before applying pagination
     movableColumns:true, // allows columns to be moved around
     resizableRows:true, // allows rows to be resize'
+
     // initialSort:[
     //   {column:"ID Paquete", dir:"asc"},
     // ],    
       columns:[ //Define Table Columns
         {title:"Status", field:"status", width:80,  align:"center", formatter:"tickCross", sorter:"boolean",},
           {title:"ID Paquete", field:"id_paquete", width:150, onClick: "prueba()"},
-          {title:"Cédula Usuario", field:"cedula"},
-          {title:"Nombre Usuario", field:"nombre", align:"left"},
-          {title:"Descripcion", field:"descripcion"},
+          {title:"Cédula Usuario", field:"cedula", minWidth: 100},
+          {title:"Nombre Usuario", field:"nombre", align:"left", minWidth: 200},
+          {title:"Descripcion", field:"descripcion", minWidth: 100},
           
           
           
@@ -35,11 +36,13 @@ function initiateTable() {
 function fillTable (obj){
     //El metodo se encarga de convertir el objeto recibido en un arreglo
     //y de llamar al metodo encargado de llenar la tabla.
+    console.log(obj)
     let arr = []
       Object.keys(obj).forEach((key)=>{
-        console.log( key)
+        console.log( obj[key])
           arr.push(obj[key])
       })
+      console.log(arr)
       $("#tabla").tabulator("setData", arr);   
   }
 
@@ -114,12 +117,12 @@ window.onclick = function(event) {
         modal.style.display = "none";
     }
 }
-var body = document.getElementById('total-body');
-body.addEventListener('click', function(){
-    // console.log("click en el body")
-})
+// var body = document.getElementById('total-body');
+// // body.addEventListener('click', function(){
+// //     // console.log("click en el body")
+// // })
 function selectCity() {
-    let cities = ["Barquisimeto", "Maracaibo", "Valencia", "Anzoategui", "Mérida", "Carabobo"];
+    let cities = ["barquisimeto", "maracaibo", "valencia", "anzoategui", "mérida", "carabobo", "distritocapital", "falcon"];
     let select = document.createElement("select")
     const length = cities.length
     for (let i = 0; i< length; i++){
