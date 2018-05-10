@@ -2,7 +2,7 @@
 
 ![login](https://github.com/lilicolls/rastreoPaquetes/blob/master/docs/images/login%20(1).jpg)
 
-![principal-page](https://github.com/lilicolls/rastreoPaquetes/blob/master/docs/images/principal.jpg)
+![principal-page](https://github.com/lilicolls/rastreoPaquetes/blob/master/docs/images/principal2.jpg)
 
 ![filterById](https://github.com/lilicolls/rastreoPaquetes/blob/master/docs/images/filter.jpg)
 
