@@ -9,7 +9,7 @@ Also, if the user is logged as a supervisor can list every package or look an es
  - [Firebase services (Database, Authentication and Hosting)](https://firebase.google.com/)
  - Google Maps API -Used to show graphic location to the user
 
-## Screeshots 
+## Screenshots 
 
 ![login](https://github.com/lilicolls/rastreoPaquetes/blob/master/docs/images/login.jpg)
 
